@@ -1,20 +1,26 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MainContainer = styled.main`
-  background-color: black;
+  position: relative;
+  background-color: #363636;
+  height: 713px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const PlayerText = styled.h1`
-  color: red;
+  color: whitesmoke;
 `;
 
 export const Tile = styled.span`
-  border-radius: 0.5rem;
+  border-radius: 5px;
   background: white;
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
   position: relative;
 
-  &[data-player="x"] {
+    &[data-player="x"] {
     &:before,
     &:after {
       content: "";
@@ -48,10 +54,16 @@ export const Tile = styled.span`
 `;
 
 export const Container = styled.div`
-  height: 50vmin;
-  width: 50vmin;
   display: grid;
+  height: 350px;
+  width: 50vmin;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 1rem;
 `;
+
+export const ResetButton = styled.button`
+  margin-bottom: 4%;
+`;
+
+export const WinnerText = styled.p``;
