@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { motion } from 'framer-motion';
 export const MainContainer = styled.main`
   position: relative;
   background-color: #363636;
@@ -10,16 +10,17 @@ export const MainContainer = styled.main`
   align-items: center;
 `;
 
-export const PlayerText = styled.h1`
+export const PlayerText = styled(motion.h1)`
   color: whitesmoke;
+  font-family: Arial;
+  font-size: 30px;
 `;
 
-export const Tile = styled.span`
+export const Tile = styled(motion.span)`
   border-radius: 5px;
   background: white;
   box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2);
   position: relative;
-
     &[data-player="x"] {
     &:before,
     &:after {
@@ -40,6 +41,8 @@ export const Tile = styled.span`
     }
   }
 
+  
+
   &[data-player="o"] {
     &:before {
       content: "";
@@ -53,7 +56,7 @@ export const Tile = styled.span`
     }
 `;
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   display: grid;
   height: 350px;
   width: 50vmin;
@@ -66,4 +69,16 @@ export const ResetButton = styled.button`
   margin-bottom: 4%;
 `;
 
-export const WinnerText = styled.p``;
+export const WinnerText = styled.p`
+  font-family: Arial;
+  font-size: 25px;
+  font-weight: 850;
+  color: white;
+`;
+
+export const DrawText = styled(motion.p)`
+  font-family: Arial;
+  font-size: 35px;
+  font-weight: 450;
+  color: white;
+`;

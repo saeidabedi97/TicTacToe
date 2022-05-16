@@ -53,7 +53,7 @@ const TicTacToeMachine = createMachine<Context>(
             actions: assign({
               winner: (context) => null
             }),
-            target: 'finished'
+            target: 'draw'
           }
         ],
         on: {
@@ -82,18 +82,8 @@ const TicTacToeMachine = createMachine<Context>(
           }
         }
       },
-      finished: {
-        on: {
-          RESET: {
-            target: 'playing',
-            actions: assign({
-              cells: (context) => [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-              currentPlayer: (context) => 'x',
-              winner: (context) => null
-            })
-          }
-        }
-      }
+      finished: {},
+      draw: {}
     }
   },
   {
